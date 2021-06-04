@@ -1,1 +1,19 @@
-print("Hi")
+f = open("TextFile1.txt")
+#for line in f:
+#	print(line)
+#f.close()
+
+print("Welcome to the wonderful game of reverse hangman!")
+print("The program will try to guess what word you're thinking of!")
+print("How many letters are there in your word?")
+num_letters = input("(Single letters and numerical values aren't allowed.) ")
+letters_confirmation = input("Are you sure there are " + num_letters + " letters in your word? (yes/no)")
+
+while letters_confirmation.lower().strip() == "no":
+	print("How many letters are there in your word?")
+	num_letters = input("(Single letters and numerical values aren't allowed.) ")
+	letters_confirmation = input("Are you sure there are " + num_letters + " letters in your word? (yes/no)")
+
+if letters_confirmation.lower().strip() == "yes":
+	print("Dab")
+	#print
