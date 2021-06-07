@@ -3,18 +3,26 @@ f = open("TextFile1.txt")
 #	print(line)
 #f.close()
 
+from collections import Counter
+
 print("Welcome to the wonderful game of reverse hangman!")
 print("The program will try to guess what word you're thinking of!")
-print("How many letters are there in your word?")
-num_letters = input("(Letters aren't allowed.) ")
-letters_confirmation = input("Are you sure there are " + num_letters + " letters in your word? (yes/no)")
+print("What is the number of letters in your word?")
+while True:
+	try:
+		num_letters = int(input("(Only numerical values are allowed here.) "))
+		break
+	except: print("That's not a valid option. Please try again!")
 
-while letters_confirmation.lower().strip() == "no":
-	print("How many letters are there in your word?")
-	num_letters = input("(Single letters and numerical values aren't allowed.) ")
-	letters_confirmation = input("Are you sure there are " + num_letters + " letters in your word? (yes/no)")
 
-if letters_confirmation.lower().strip() == "yes":
-	print("Dab")
-	print
-# num_letters = input("(Letters aren't allowed.) ") shouldn't accept letters. It should only accept integers. 
+if num_letters >= 2:
+	letters_confirmation = input("Are you sure there are " + str(num_letters) + " letters in your word? (yes/no)")
+	if letters_confirmation.strip().lower() == "yes":
+		print("Great! Let's get started!")
+	else:
+		while True:
+				try:
+						num_letters = int(input("(Only numerical values are allowed here.) "))
+						break
+				except: print("That's not a valid option. Please try again!")
+
